@@ -1,8 +1,7 @@
 from sqlalchemy import Column, ForeignKey, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
-Base = declarative_base()
+from backend.database import Base
 
 
 class Address(Base):
