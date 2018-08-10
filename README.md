@@ -14,4 +14,4 @@ Generate migrations automatically with:
 `docker-compose run --rm app alembic revision --autogenerate -m "Your migration message"`
 
 Update the database to the latest migration with:
-`docker-compose run --rm app alembic upgrade head`
+`docker-compose run --rm app alembic upgrade head` (this also gets run on `docker-compose up`)
