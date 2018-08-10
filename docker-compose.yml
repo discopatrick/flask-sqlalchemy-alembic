@@ -7,6 +7,7 @@ services:
       - "5000:5000"
     environment:
       - FLASK_APP=backend
+      - FLASK_ENV=development
     volumes:
       - ".:/code"
   db:
