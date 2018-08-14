@@ -10,7 +10,6 @@ services:
     environment:
       - FLASK_APP=backend
       - FLASK_ENV=development
-      - PYTHONPATH=.
     volumes:
       - ".:/code"
   db:

@@ -1,7 +1,18 @@
 from __future__ import with_statement
+
+from logging.config import fileConfig
+import os
+import sys
+
 from alembic import context
 from sqlalchemy import engine_from_config, pool
-from logging.config import fileConfig
+
+# The `alembic` command runs `alembic/env.py` as a script, which then tries to
+# import your modules to read your database schema. It needs a reference to
+# where those modules are. Thus, we add the project directory to `sys.path`.
+sys.path.append(
+    os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+)
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
