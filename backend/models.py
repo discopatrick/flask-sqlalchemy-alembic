@@ -1,5 +1,5 @@
-from sqlalchemy import Column, ForeignKey, Integer, String
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, ForeignKey, Integer, String, Table
+from sqlalchemy.orm import mapper, relationship
 
 from backend.database import Base
 
@@ -31,3 +31,17 @@ class User(Base):
     def __repr__(self):
         return "<User(name='%s', fullname='%s', password='%s')>" % (
             self.name, self.fullname, self.password)
+
+
+role = Table('role', Base.metadata,
+    Column('id', Integer, primary_key=True),
+    Column('name', String(50)),
+)
+
+
+class Role(object):
+    def __init__(self, name):
+        self.name = name
+
+
+mapper(Role, role)
