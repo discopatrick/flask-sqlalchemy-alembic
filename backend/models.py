@@ -47,15 +47,8 @@ class Role(object):
 mapper(Role, role)
 
 
-company = Table('company', Base.metadata,
-    Column('id', Integer, primary_key=True),
-    Column('name', String(50)),
-)
+class Company(Base):
+    __tablename__ = 'company'
 
-
-class Company(object):
-    def __init__(self, name):
-        self.name = name
-
-
-mapper(Company, company)
+    id = Column(Integer, primary_key=True)
+    name = Column(String(50))
